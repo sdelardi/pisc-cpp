@@ -5,8 +5,10 @@ std::string	randomChump(void)
 {
 	std::string NameArray[10] = { "budz", "pain", "konan", "nagato", "itachi", "tobi", "madara", "naruto", "danzou", "kakashi" };
 	std::string name;
+	int			randed;
 
-	name = NameArray[rand()%10];
+	randed = rand() % 10;
+	name = NameArray[randed];
 	return name;
 }
 
