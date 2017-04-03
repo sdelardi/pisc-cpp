@@ -12,14 +12,14 @@ ZombieEvent::~ZombieEvent(void)
 
 void		ZombieEvent::setZombieType(Zombie *zombie, std::string type)
 {
-	zombie->type = type;
+	zombie->setType(type);
 }
 
 Zombie		*ZombieEvent::newZombie(std::string name)
 {
 	Zombie	*zomb = new Zombie();
-	zomb->name = name;
-	zomb->type = "normal";
+	zomb->setName(name);
+	zomb->setType("normal");
 	return zomb;
 }
 
@@ -36,8 +36,8 @@ void		ZombieEvent::randomChump(void)
 		name += letter;
 	}
 
-	z.name = name;
-	z.type = "normal";
+	z.setName(name);
+	z.setType("normal");
 	z.announce();
 	return ;
 }

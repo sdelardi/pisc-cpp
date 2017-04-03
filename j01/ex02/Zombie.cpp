@@ -1,17 +1,17 @@
 #include "Zombie.hpp"
 
-		Zombie::Zombie(void)
+void	Zombie::setName(std::string name)
 {
-	return ;
+	this->_name = name;
 }
 
-		Zombie::~Zombie(void)
+void	Zombie::setType(std::string type)
 {
-	return ;
+	this->_type = type;
 }
 
 void	Zombie::announce(void)
 {
-	std::cout << "<" << this->name << " (" << this->type << ")> ";
+	std::cout << "<" << this->_name << " (" << this->_type << ")> ";
 	std::cout << "Braiiiiiiinnnssss..." << std::endl;
 }
