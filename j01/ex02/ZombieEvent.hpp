@@ -11,6 +11,7 @@ public:
 					~ZombieEvent(void);
 	static void		setZombieType(Zombie *zomb, std::string type);
 	static Zombie	*newZombie(std::string name);
+	static void		randomChump(void);
 };
 
 #endif
