@@ -25,13 +25,17 @@ Zombie		*ZombieEvent::newZombie(std::string name)
 
 void		ZombieEvent::randomChump(void)
 {
-	std::string NameArray[10] = { "budz", "pain", "konan", "nagato", "itachi", "tobi", "madara", "naruto", "danzou", "kakashi" };
-	std::string name;
-	int         randed;
 	Zombie		z;
 
-	randed = rand() % 10;
-	name = NameArray[randed];
+	std::string name = "";
+	int nameLen = rand() % 10 + 4;
+
+	for (int i = 0; i < nameLen; i++)
+	{
+		char letter = rand() % 26 + (int)'a';
+		name += letter;
+	}
+
 	z.name = name;
 	z.type = "normal";
 	z.announce();
