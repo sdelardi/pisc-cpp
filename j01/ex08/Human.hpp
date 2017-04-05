@@ -13,9 +13,4 @@ class Human
 	void	action(std::string const & action_name, std::string const & target);
 };
 
-typedef struct mapping
-{
-	std::string action;
-	void (Human::*function)(std::string const &target);
-} t_mapping;
 #endif

@@ -17,15 +17,11 @@ void	Human::intimidatingShout(std::string const & target)
 
 void	Human::action(std::string const & action_name, std::string const & target)
 {
-	t_mapping map[3] = {
-		{"melee attack", &Human::meleeAttack},
-		{"ranged attack", &Human::rangedAttack},
-		{"intimidating shout", &Human::intimidatingShout}
-	};
-
+	std::string arr[] = {"melee attack", "ranged attack", "intimidating shout"};
+	void (Human::*f[])(std::string const &target) = {&Human::meleeAttack, &Human::rangedAttack, &Human::intimidatingShout};
 	for (int i = 0; i < 3; i++)
 	{
-		if (action_name == map[i].action)
-			(this->*(map[i].function))(target);
+		if (action_name.compare(arr[i]) == 0)
+			(this->*(f[i]))(target);
 	}
 }
